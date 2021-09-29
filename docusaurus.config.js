@@ -1,5 +1,5 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -20,12 +20,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         /** @type {import('@docusaurus/preset-classic').Options} */
         ({
           docs: {
-            sidebarPath: require.resolve('./sidebars.js')
-            // Please change this to your repo.
-            // editUrl: 'https://github.com/eotkd4791/til-archive/'
-          },
-          blog: {
-            showReadingTime: true
+            sidebarPath: require.resolve('./sidebars.js'),
+            routeBasePath: '/'
+
             // Please change this to your repo.
             // editUrl: 'https://github.com/eotkd4791/til-archive/'
           },
@@ -46,13 +43,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             src: 'img/stef.png'
           },
           items: [
-            {
-              type: 'doc',
-              docId: 'intro',
-              position: 'left',
-              label: 'Tutorial'
-            },
-            // { to: '/blog', label: 'Blog', position: 'left' },
             {
               href: 'https://github.com/eotkd4791',
               label: 'GitHub',
