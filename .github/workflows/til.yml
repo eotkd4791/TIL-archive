@@ -2,9 +2,9 @@ name: documentation
 
 on:
   pull_request:
-    branches: [main]
+    branches: [documentation]
   push:
-    branches: [main]
+    branches: [documentation]
 
 jobs:
   checks:
@@ -42,7 +42,7 @@ jobs:
           GIT_USER: git
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          git config user.email "eotkd4791@gmail.com"
+          git config user.email "eotkd4791@github.com"
           git config user.name "eotkd4791"
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
