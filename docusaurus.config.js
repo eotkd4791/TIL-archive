@@ -5,14 +5,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (
   module.exports = {
-    title: 'TDL',
-    url: 'https://your-docusaurus-test-site.com',
-    baseUrl: '/',
+    title: 'TIL',
+    url: 'https://eotkd4791.github.io',
+    baseUrl: '/TIL-archive/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'eotkd4791', // Usually your GitHub org/user name.
     projectName: 'TIL-archive', // Usually your repo name.
+    trailingSlash: false,
 
     presets: [
       [
