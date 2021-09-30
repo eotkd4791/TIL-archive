@@ -1,6 +1,6 @@
 # TIL-archive
 
-[TIL-archive](https://eotkd4791.github.io/til-archive)
+[TIL-archive](https://eotkd4791.github.io/TIL-archive)
 
 TIL을 모아두는 용도로 사용하는 Repo
 
