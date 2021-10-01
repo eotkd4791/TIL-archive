@@ -37,7 +37,11 @@ title: 덕타이핑(Duck Typing)이란?
 
 ### 예시
 
-아래 예시를 보면 `Person`클래스와 달리 `Car`클래스는 `Movable` 인터페이스를 구현하지 않았다. 그럼에도 아래의 moveThere함수의 인자로 Person과 Car의 인스턴스를 전달하더라도 정상적으로 동작하게 된다.
+아래 예시를 보면 `Person`클래스와 달리 `Car`클래스는 `Movable` 인터페이스를 구현하지 않았다.
+
+그럼에도 아래의 moveThere함수의 인자로 Person과 Car의 인스턴스를 넘겨주어도 타입 체크에 걸리지 않고 통과된다.
+
+다른 방식으로 구현된 클래스이지만, 내부에 같은 메소드가 구현되어있기 떄문에 같은 타입으로 인식한다.
 
 ```ts
 interface Movable {
@@ -74,10 +78,10 @@ moveThere(new Car());
 
 > 참고자료
 
-> [Nesoy blog - 덕타이핑이란?](https://nesoy.github.io/articles/2018-02/Duck-Typing)
+[Nesoy blog - 덕타이핑이란?](https://nesoy.github.io/articles/2018-02/Duck-Typing)
 
-> [타입스크립트 프로그래밍](http://www.yes24.com/Product/Goods/90265564?OzSrank=2)
+[타입스크립트 프로그래밍](http://www.yes24.com/Product/Goods/90265564?OzSrank=2)
 
-> [velog - iwaskorean.log](https://velog.io/@iwaskorean/JavaScript-33%EA%B0%80%EC%A7%80-%EA%B0%9C%EB%85%90-3.-Implicit-Explicit-Coercion-and-Duck-Typing%EC%95%94%EC%8B%9C%EC%A0%81-%EB%AA%85%EC%8B%9C%EC%A0%81-%ED%98%95%EB%B3%80%ED%99%98%EA%B3%BC-%EB%8D%95-%ED%83%80%EC%9D%B4%ED%95%91)
+[velog - iwaskorean.log](https://velog.io/@iwaskorean/JavaScript-33%EA%B0%80%EC%A7%80-%EA%B0%9C%EB%85%90-3.-Implicit-Explicit-Coercion-and-Duck-Typing%EC%95%94%EC%8B%9C%EC%A0%81-%EB%AA%85%EC%8B%9C%EC%A0%81-%ED%98%95%EB%B3%80%ED%99%98%EA%B3%BC-%EB%8D%95-%ED%83%80%EC%9D%B4%ED%95%91)
 
-> [마이구미의 HelloWorld - Duck Typing이란?](https://mygumi.tistory.com/367)
+[마이구미의 HelloWorld - Duck Typing이란?](https://mygumi.tistory.com/367)
