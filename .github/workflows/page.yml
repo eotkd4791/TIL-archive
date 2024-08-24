@@ -1,14 +1,11 @@
 name: TIL-archive
 
 on:
-  pull_request:
-    branches: [main]
   push:
     branches: [main]
 
 jobs:
   checks:
-    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,17 +13,9 @@ jobs:
         with:
           node-version: "16.x"
       - name: TIL-archive 테스트 배포
-        run: |
-          if [ -e yarn.lock ]; then
-            yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
-            npm ci
-          else
-            npm i
-          fi
+        run: yarn install --frozen-lockfile
           yarn build
   gh-release:
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -41,8 +30,8 @@ jobs:
           USE_SSH: true
           GIT_USER: eotkd4791
         run: |
-          git config --global user.email "eotkd4791@gmail.com"
-          git config --global user.name "eotkd4791"
+          git config user.email "eotkd4791@gmail.com"
+          git config user.name "eotkd4791"
           yarn install --frozen-lockfile
           yarn build
           yarn deploy
