@@ -1,0 +1,38 @@
+name: TIL-archive
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - name: TIL-archive 테스트 배포
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+  gh-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+      - name: TIL-archive 배포
+        env:
+          USE_SSH: true
+          GIT_USER: eotkd4791
+        run: |
+          git config user.email "eotkd4791@gmail.com"
+          git config user.name "eotkd4791"
+          yarn install --frozen-lockfile
+          yarn build
+          yarn deploy
